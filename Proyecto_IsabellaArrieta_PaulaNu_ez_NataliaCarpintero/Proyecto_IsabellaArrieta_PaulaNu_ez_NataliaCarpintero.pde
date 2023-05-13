@@ -1,14 +1,19 @@
 float xr, yr, lado, esp;
+String x,y;
 
 void setup() { //Intrucciones que se ejecutan al inicio
 
   size(800, 500); //JFrame Ancho y alto de la ventana
-  background(75, 111, 148); //Colorea la ventana Azul Lindo
-  xr=0.1*width;
+  textSize(30);
   
+  
+ 
 }
 void draw() //intrucciones que se ejecutan repetidamente
 {
-  background(255);
-  println(mouseX,mouseY);
+   background(75, 111, 148); //Colorea la ventana Azul Lindo
+  x=String.valueOf(mouseX);
+  y=String.valueOf(mouseY);
+  
+  text ("x:"+x+" y: "+y,20,30);
 }
