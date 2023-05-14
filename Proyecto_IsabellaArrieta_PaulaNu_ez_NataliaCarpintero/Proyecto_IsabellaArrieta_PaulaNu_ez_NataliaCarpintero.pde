@@ -15,8 +15,8 @@ void setup()
 }
 void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 {
- background(#CB5F9B);
-  //background(75, 111, 148); //Colorea la ventana Azul Lindo
+
+  background(75, 111, 148); //Colorea la ventana Azul Lindo
 
   textFont(fn);
   //Coordenadas (Despues se quita)
