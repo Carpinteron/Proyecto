@@ -1,12 +1,12 @@
 
 String x, y;//coordenaadas
 PFont ftitulo, fsubtitulo, fn;
-int valorprueba, pag=0;
+int valorprueba, pag = 0;
 
 //Variable para el tipo de letra
 void setup()
 { //Intrucciones que se ejecutan al inicio
-
+  surface.setTitle("MATHS-SOLVES");
   size(800, 450); //JFrame Ancho y alto de la ventana
   ftitulo=loadFont("Ravie-38.vlw"); //Le asigno este tipo de letra
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
@@ -61,7 +61,7 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   if (pag==0) {
     setup();
   } else if (pag==1) {
-    setupI();
+   setupI();
   } else if (pag==2) {
     setupR();
   }
@@ -70,9 +70,10 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 
 void mousePressed () {
   if (mouseX>=114 & mouseX<=314 & mouseY>=260 & mouseY<=350) {
-    pag=1;
+   pag=1;
   } else if (mouseX>=456 & mouseX<=656 & mouseY>=260 & mouseY<=350) {
-      pag=2;
-  }
-  
+    pag=2;
+  } else if (mouseX>=15 & mouseX<=95 & mouseY>=15 & mouseY<=45) {
+    pag = 0;
+    }
 }
