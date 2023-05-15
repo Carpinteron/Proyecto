@@ -1,5 +1,8 @@
-void setup1(){
-  size(300,800);
+void setupI(){
+  iterativ();
 }
-void draw1(){
+void iterativ(){
+  
+    background(55, 11, 148);
+    
 }
