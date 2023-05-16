@@ -10,10 +10,19 @@ void setupI() {
   text("Volver", 24, 39);
 }
 void iterativ() {
-  background(76, 78, 147);
+  background(52,62,95);
+  
+  
+    //cuadro pantalla numeros
+  fill(#D7D5E0);
+  noStroke();
+  rect(9, 9, 780, 180, 25); //Rectangulo con puntas redondas
+  
+  
+  //coordenadas mientras mientras
   x=String.valueOf(mouseX);
   y=String.valueOf(mouseY);
-  fill(255);
+  fill(0);
   text ("x:"+x+" y: "+y, 200, 30);
 }
 public void llamarMousePressed() {
