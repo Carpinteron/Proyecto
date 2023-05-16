@@ -29,7 +29,7 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 
   textFont(ftitulo);
   textSize(50);
-   fill(0);
+  fill(0);
   text("MATHS-SOLVES", 155, 134);
   fill(255);
   text("MATHS-SOLVES", 158, 130);
@@ -57,12 +57,12 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   fill(21, 21, 62);
   text("Calculadora \n  Recursiva", 486, 296);
 
-
+ 
   //Menu principal
   if (pag==0) {
     setup();
   } else if (pag==1) { //Calculadora Iterativa
-   setupI();
+    setupI();
   } else if (pag==2) { //Calculadora recursiva
     setupR();
   }
@@ -71,10 +71,10 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 //Cambiar "pagina" al presionar un boton
 void mousePressed () {
   if (mouseX>=114 & mouseX<=314 & mouseY>=260 & mouseY<=350) {
-   pag=1;
+    pag=1;
   } else if (mouseX>=456 & mouseX<=656 & mouseY>=260 & mouseY<=350) {
     pag=2;
   } else if (mouseX>=15 & mouseX<=95 & mouseY>=15 & mouseY<=45) {
     pag = 0;
-    }
+  }
 }
