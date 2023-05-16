@@ -29,6 +29,9 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 
   textFont(ftitulo);
   textSize(50);
+   fill(0);
+  text("MATHS-SOLVES", 155, 134);
+  fill(255);
   text("MATHS-SOLVES", 158, 130);
 
   textFont(fsubtitulo);

@@ -18,7 +18,7 @@ void recur(){
   background(60,52,95);
 
    //cuadro pantalla numeros
-  fill(#D7D5E0);
+  fill(#DCD5E0);
   noStroke();
   rect(9, 9, 780, 180, 25); //Rectangulo con puntas redondas
   
