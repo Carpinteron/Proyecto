@@ -61,14 +61,14 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   //Menu principal
   if (pag==0) {
     setup();
-  } else if (pag==1) {
+  } else if (pag==1) { //Calculadora Iterativa
    setupI();
-  } else if (pag==2) {
+  } else if (pag==2) { //Calculadora recursiva
     setupR();
   }
 }
 
-
+//Cambiar "pagina" al presionar un boton
 void mousePressed () {
   if (mouseX>=114 & mouseX<=314 & mouseY>=260 & mouseY<=350) {
    pag=1;
