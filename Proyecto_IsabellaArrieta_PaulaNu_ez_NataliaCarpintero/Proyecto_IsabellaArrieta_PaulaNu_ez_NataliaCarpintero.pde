@@ -1,7 +1,7 @@
 
 String x, y;//coordenaadas
 PFont ftitulo, fsubtitulo, fn;
-int valorprueba, pag = 0;
+int pag = 0;
 
 //Variable para el tipo de letra
 void setup()
@@ -11,7 +11,6 @@ void setup()
   ftitulo=loadFont("Ravie-38.vlw"); //Le asigno este tipo de letra
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
   fn=loadFont("MS-Gothic-20.vlw");
-  valorprueba=0;
   pag=0;
 }
 void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
@@ -55,7 +54,6 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   fill(21, 21, 62);
   text("Calculadora \n  Recursiva", 486, 296);
 
-  println(valorprueba);
 
   //Menu principal
   if (pag==0) {
