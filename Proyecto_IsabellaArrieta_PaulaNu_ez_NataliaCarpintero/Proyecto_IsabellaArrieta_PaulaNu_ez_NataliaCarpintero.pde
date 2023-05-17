@@ -7,7 +7,7 @@ int pag = 0;
 void setup()
 { //Intrucciones que se ejecutan al inicio
   surface.setTitle("MATHS-SOLVES");
-  size(800, 450); //frame Ancho y alto de la ventana
+  size(800, 600); //frame Ancho y alto de la ventana
   ftitulo=loadFont("Ravie-38.vlw"); //Le asigno este tipo de letra
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
   fn=loadFont("MS-Gothic-20.vlw");
