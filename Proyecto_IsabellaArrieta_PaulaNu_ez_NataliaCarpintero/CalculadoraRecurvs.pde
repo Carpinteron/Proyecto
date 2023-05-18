@@ -1,3 +1,4 @@
+
 void setupR(){
   recur();
   surface.setTitle("CALCULADORA RECURSIVA");
@@ -9,7 +10,7 @@ void setupR(){
   rect(15, 15, 80, 30, 25); //Rectangulo con puntas redondas
   fill(21, 21, 62);
   textSize(20);
-    textFont(fsubtitulo);
+  textFont(fsubtitulo);
   text("Volver", 24, 39);
   
   
@@ -17,17 +18,23 @@ void setupR(){
 void recur(){
   
   background(60,52,95);
+  image(calc,25,200); 
+  
 
    //cuadro pantalla numeros
   fill(#DCD5E0);
   noStroke();
-  rect(9, 9, 780, 180, 25); //Rectangulo con puntas redondas
+   rect(9, 9, 683, 180, 25); //Rectangulo con puntas redondas
   //coordenadas
+  
+  fdigital1 = createFont("Calculator.ttf", 32);
+  textFont(fdigital1);
   x=String.valueOf(mouseX);
   y=String.valueOf(mouseY);
   fill(0);
-  text ("x:"+x+" y: "+y, 200, 30);
-  
-  
-  
+  text ("x:"+x+" y: "+y, 17, 72);
 }
+
+//public void llamarMousePressed1() {
+//  mousePressed();
+//}

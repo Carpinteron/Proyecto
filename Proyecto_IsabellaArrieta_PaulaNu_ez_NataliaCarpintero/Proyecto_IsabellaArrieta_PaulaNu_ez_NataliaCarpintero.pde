@@ -1,22 +1,31 @@
+import processing.serial.*;
+
 
 String x, y;//coordenaadas
 PFont ftitulo, fsubtitulo, fn;
 int pag = 0;
+PImage Bs;
+PImage calc;
 
 //Variable para el tipo de letra
 void setup()
 { //Intrucciones que se ejecutan al inicio
+  calc=loadImage("calc.png");
+  Bs=loadImage("/imagen/calc.png");
   surface.setTitle("MATHS-SOLVES");
-  size(800, 600); //frame Ancho y alto de la ventana
+  size(700, 600); //frame Ancho y alto de la ventana
   ftitulo=loadFont("Ravie-38.vlw"); //Le asigno este tipo de letra
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
   fn=loadFont("MS-Gothic-20.vlw");
   pag=0;
+ 
+   
 }
 void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 {
 
   background(75, 111, 148); //Colorea la ventana Azul Lindo
+  
 
   textFont(fn);
   //Coordenadas (Despues se quita)
@@ -30,14 +39,14 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   textFont(ftitulo);
   textSize(50);
   fill(0);
-  text("MATHS-SOLVES", 155, 134);
+  text("MATHS-SOLVES", 95, 134);
   fill(255);
-  text("MATHS-SOLVES", 158, 130);
+  text("MATHS-SOLVES", 97, 130);
 
   textFont(fsubtitulo);
   textSize(26);
   fill(25, 40, 67);
-  text("N I P creations", 318, 165);
+  text("N I P creations", 262, 181);
 
   //Crear Botones
 
@@ -53,12 +62,11 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   fill(245, 234, 138); //Cambio color amarillo
   stroke(21, 21, 62); //Borde color
   strokeWeight(5); //Borde grosor
-  rect(456, 260, 200, 90, 25); //Rectangulo con puntas redondas
+  rect(403, 260, 200, 90, 25); //Rectangulo con puntas redondas
   fill(21, 21, 62);
-  text("Calculadora \n  Recursiva", 486, 296);
-
- 
+  text("Calculadora \n  Recursiva", 424, 296);
   //Menu principal
+  
   if (pag==0) {
     setup();
   } else if (pag==1) { //Calculadora Iterativa
@@ -76,5 +84,6 @@ void mousePressed () {
     pag=2;
   } else if (mouseX>=15 & mouseX<=95 & mouseY>=15 & mouseY<=45) {
     pag = 0;
+    
   }
 }
