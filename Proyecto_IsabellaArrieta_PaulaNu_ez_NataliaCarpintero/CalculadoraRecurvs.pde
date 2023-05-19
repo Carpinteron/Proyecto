@@ -8,11 +8,13 @@ void setupR(){
   fill(245, 234, 138); //Cambio color amarillo
   stroke(21, 21, 62); //Borde color
   rect(15, 15, 80, 30, 25); //Rectangulo con puntas redondas
-  fill(21, 21, 62);
+  fill(21, 21, 62); // Color de texto
   textSize(20);
   textFont(fsubtitulo);
   text("Volver", 24, 39);
   
+  textSize(40);
+  text("Recursiva",47,250);
   
 }
 void recur(){

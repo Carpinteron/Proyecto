@@ -18,14 +18,12 @@ void setup()
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
   fn=loadFont("MS-Gothic-20.vlw");
   pag=0;
- 
-   
 }
 void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 {
 
   background(75, 111, 148); //Colorea la ventana Azul Lindo
-  
+
 
   textFont(fn);
   //Coordenadas (Despues se quita)
@@ -66,11 +64,12 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   fill(21, 21, 62);
   text("Calculadora \n  Recursiva", 424, 296);
   //Menu principal
-  
+
   if (pag==0) {
     setup();
   } else if (pag==1) { //Calculadora Iterativa
     setupI();
+    MousePressedI();
   } else if (pag==2) { //Calculadora recursiva
     setupR();
   }
@@ -78,12 +77,12 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 
 //Cambiar "pagina" al presionar un boton
 void mousePressed () {
-  if (mouseX>=114 & mouseX<=314 & mouseY>=260 & mouseY<=350) {
-    pag=1;
-  } else if (mouseX>=456 & mouseX<=656 & mouseY>=260 & mouseY<=350) {
-    pag=2;
-  } else if (mouseX>=15 & mouseX<=95 & mouseY>=15 & mouseY<=45) {
-    pag = 0;
-    
-  }
+
+  if (pag == 0) {
+    if (mouseX>=114 & mouseX<=314 & mouseY>=260 & mouseY<=350) {
+      pag=1;
+    } else if (mouseX>=456 & mouseX<=656 & mouseY>=260 & mouseY<=350) {
+      pag=2;
+    }
+  } 
 }
