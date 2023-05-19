@@ -1,5 +1,5 @@
 
-PFont fdigital1;
+PFont fdigital1, letra;
 int n1;
 void setupI() {
 
@@ -16,6 +16,10 @@ void setupI() {
 
   textSize(40);
   fill(245, 234, 138);
+  
+  letra=loadFont("AgencyFB-Reg-48.vlw");
+  textFont(letra);
+  
   text("Iterativa", 56, 250);
 }
 
