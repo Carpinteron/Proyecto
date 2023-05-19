@@ -15,13 +15,12 @@ void setupI() {
   text("Volver", 24, 39);
 
   textSize(40);
+  fill(245, 234, 138);
   text("Iterativa", 56, 250);
 }
 
 
 void iterativ() {
-
-
 
   background(52, 62, 95); //Color de fondo
   image(calc, 25, 200);  //Imagen de botones
@@ -42,10 +41,6 @@ void iterativ() {
   text ("x:"+x+" y: "+y, 17, 72);
 }
 
-//void drawButton(int x, int y, int ancho, int altura, int i, int j) {
-//  if (mouseX>=x && mouseX<=x+ancho && mouseY>=y && mouseY<=y+altura) {
-//  }
-//}
 
 void MousePressedI() {
   if (mousePressed) {
@@ -75,14 +70,14 @@ void MousePressedI() {
       int y = startY + j * (altura + 5);
 
       if (mouseX>=x && mouseX<=x+ancho && mouseY>=y && mouseY<=y+altura) {
-        botones(i, j);
+        botonesI(i, j);
       }
     }
   }
 }
 
 
-void botones(int i, int j) { // Se ejecuta al presionar los botones
+void botonesI(int i, int j) { // Se ejecuta al presionar los botones
   if (mousePressed) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
     case 0: // FILA 0 DE BOTONES

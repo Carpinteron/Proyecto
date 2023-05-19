@@ -72,6 +72,7 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
     MousePressedI();
   } else if (pag==2) { //Calculadora recursiva
     setupR();
+    MousePressedR();
   }
 }
 
