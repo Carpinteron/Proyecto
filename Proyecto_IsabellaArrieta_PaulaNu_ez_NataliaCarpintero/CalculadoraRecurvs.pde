@@ -39,31 +39,18 @@ void recur(){
 }
 
 void MousePressedR() {
-  if (mousePressed) {
-    if (mouseX>=12 & mouseX<=97 & mouseY>=12 & mouseY<=45) {
-      pag = 0; // volver a menu principal
-    } else // PRIMERA LINEA (se hace por separado al resto debido a las proporciones de los botones
-    if (mouseX>=245 && mouseX<=348 && mouseY>=210 && mouseY<=257) {
-      println("COMBINATORIA");
-    } else if (mouseX>=355 && mouseX<=457 && mouseY>=210 && mouseY<=259) {
-      println("SENO");
-    } else if (mouseX>=461 && mouseX<=556 && mouseY>=211 && mouseY<=261) {
-      println("COSENO");
-    } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
-      println("TANGENTE");
-    }
-  }
+  
   int n = 6; // Número de filas de botones
   int m = 4; // Número de columnas de botones
-  int ancho = 97; // Ancho de cada botón
+  int ancho = 98; // Ancho de cada botón
   int altura = 68; // Alto de cada botón
   int startX = 38; // Coordenada x inicial del primer botón
   int startY = 262; // Coordenada y inicial del primer botón
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
 
-      int x = startX + i * (ancho + 5);
-      int y = startY + j * (altura + 5);
+      int x = startX + i * (ancho + 7);
+      int y = startY + j * (altura + 7);
 
       if (mouseX>=x && mouseX<=x+ancho && mouseY>=y && mouseY<=y+altura) {
         botonesR(i, j);
@@ -164,5 +151,21 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
       }
       break;
     }
+    mousePressed = false;
+  }
+}
+
+void mouseClickedR() {
+  if (mouseX>=12 & mouseX<=97 & mouseY>=12 & mouseY<=45) {
+    pag = 0; // volver a menu principal
+  } else // PRIMERA LINEA (se hace por separado al resto debido a las proporciones de los botones
+  if (mouseX>=245 && mouseX<=348 && mouseY>=210 && mouseY<=257) {
+    println("COMBINATORIA");
+  } else if (mouseX>=355 && mouseX<=457 && mouseY>=210 && mouseY<=259) {
+    println("SENO");
+  } else if (mouseX>=461 && mouseX<=556 && mouseY>=211 && mouseY<=261) {
+    println("COSENO");
+  } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
+    println("TANGENTE");
   }
 }

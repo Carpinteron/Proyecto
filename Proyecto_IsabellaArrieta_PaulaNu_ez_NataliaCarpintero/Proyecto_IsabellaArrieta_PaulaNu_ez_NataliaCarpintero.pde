@@ -77,7 +77,7 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 }
 
 //Cambiar "pagina" al presionar un boton
-void mousePressed () {
+void mouseClicked() {
 
   if (pag == 0) {
     if (mouseX>=114 & mouseX<=314 & mouseY>=260 & mouseY<=350) {
@@ -85,5 +85,9 @@ void mousePressed () {
     } else if (mouseX>=456 & mouseX<=656 & mouseY>=260 & mouseY<=350) {
       pag=2;
     }
-  } 
+  }else if (pag == 1){
+   mouseClickedI();
+  } else if (pag ==2){
+   mouseClickedR();
+  }
 }

@@ -16,14 +16,14 @@ void setupI() {
 
   textSize(40);
   fill(245, 234, 138);
-  
+
   letra=loadFont("AgencyFB-Reg-48.vlw");
   textFont(letra);
-  
+
   text("Iterativa", 56, 250);
+
 }
-
-
+String numeroI = "";
 void iterativ() {
 
   background(52, 62, 95); //Color de fondo
@@ -43,35 +43,29 @@ void iterativ() {
   y=String.valueOf(mouseY);
   fill(0);
   text ("x:"+x+" y: "+y, 17, 72);
+  pushStyle();
+
+  fill(0);
+  textAlign(RIGHT);
+  textFont(fdigital1);
+  textSize(65);
+  text(numeroI, 657, 158);
+  popStyle();
 }
 
 
 void MousePressedI() {
-  if (mousePressed) {
-    if (mouseX>=12 & mouseX<=97 & mouseY>=12 & mouseY<=45) {
-      pag = 0; // volver a menu principal
-    } else // PRIMERA LINEA (se hace por separado al resto debido a las proporciones de los botones
-    if (mouseX>=245 && mouseX<=348 && mouseY>=210 && mouseY<=257) {
-      println("COMBINATORIA");
-    } else if (mouseX>=355 && mouseX<=457 && mouseY>=210 && mouseY<=259) {
-      println("SENO");
-    } else if (mouseX>=461 && mouseX<=556 && mouseY>=211 && mouseY<=261) {
-      println("COSENO");
-    } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
-      println("TANGENTE");
-    }
-  }
   int n = 6; // Número de filas de botones
   int m = 4; // Número de columnas de botones
-  int ancho = 97; // Ancho de cada botón
+  int ancho = 98; // Ancho de cada botón
   int altura = 68; // Alto de cada botón
   int startX = 38; // Coordenada x inicial del primer botón
   int startY = 262; // Coordenada y inicial del primer botón
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
 
-      int x = startX + i * (ancho + 5);
-      int y = startY + j * (altura + 5);
+      int x = startX + i * (ancho + 7);
+      int y = startY + j * (altura + 7);
 
       if (mouseX>=x && mouseX<=x+ancho && mouseY>=y && mouseY<=y+altura) {
         botonesI(i, j);
@@ -80,14 +74,15 @@ void MousePressedI() {
   }
 }
 
-
 void botonesI(int i, int j) { // Se ejecuta al presionar los botones
+
   if (mousePressed) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
     case 0: // FILA 0 DE BOTONES
       switch (i) { // CAMBIA DE ACUERDO CON LA COLUMNA DE BOTONES
       case 0:
         println("BORRAR TODO");
+        numeroI = "";
         break;
       case 1:
         println("SUMA");
@@ -97,12 +92,15 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 3:
         println("9");
+        numeroI += "9";
         break;
       case 4:
         println("8");
+        numeroI += "8";
         break;
       case 5:
         println("7");
+        numeroI += "7";
         break;
       }
       break;
@@ -110,6 +108,9 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
       switch (i) {
       case 0:
         println("BORRAR"); // Acciones para el botón en la posición [1][0]
+        if (!numeroI.isEmpty()) {
+          numeroI = numeroI.substring(0, numeroI.length() - 1); // Elimina el último dígito del número actual
+        }
         break;
       case 1:
         println("MULTIPLICACION");// Acciones para el botón en la posición [1][1]
@@ -119,12 +120,15 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 3:
         println("6");
+        numeroI += "6";
         break;
       case 4:
         println("5");
+        numeroI += "5";
         break;
       case 5:
         println("4");
+        numeroI += "4";
         break;
       }
       break;
@@ -141,12 +145,15 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 3:
         println("3");
+        numeroI += "3";
         break;
       case 4:
         println("2");
+        numeroI += "2";
         break;
       case 5:
         println("1");
+        numeroI += "1";
         break;
       }
       break;
@@ -163,15 +170,34 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 3:
         println("COMA");
+        numeroI += ".";
         break;
       case 4:
         println("0");
+        numeroI += "0";
         break;
       case 5:
         println("IGUAL");
+        println(numeroI);
         break;
       }
       break;
     }
+    mousePressed = false;
+  }
+}
+
+void mouseClickedI() {
+  if (mouseX>=12 & mouseX<=97 & mouseY>=12 & mouseY<=45) {
+    pag = 0; // volver a menu principal
+  } else // PRIMERA LINEA (se hace por separado al resto debido a las proporciones de los botones
+  if (mouseX>=245 && mouseX<=348 && mouseY>=210 && mouseY<=257) {
+    println("COMBINATORIA");
+  } else if (mouseX>=355 && mouseX<=457 && mouseY>=210 && mouseY<=259) {
+    println("SENO");
+  } else if (mouseX>=461 && mouseX<=556 && mouseY>=211 && mouseY<=261) {
+    println("COSENO");
+  } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
+    println("TANGENTE");
   }
 }
