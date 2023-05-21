@@ -1,6 +1,11 @@
-
 PFont fdigital1, letra;
 int n1;
+String numeroI = "";
+String res = "";
+float resultado = 0;  // Almacena el resultado de la operación actual
+float num1 = 0;  // Almacena el número anterior ingresado por el usuario
+String operador = "";  // Almacena el operador actual (+, -, *, /)
+float ans = 0;
 void setupI() {
 
   iterativ();
@@ -21,9 +26,8 @@ void setupI() {
   textFont(letra);
 
   text("Iterativa", 56, 250);
-
 }
-String numeroI = "";
+
 void iterativ() {
 
   background(52, 62, 95); //Color de fondo
@@ -33,9 +37,6 @@ void iterativ() {
   fill(#D7D5E0);
   noStroke();
   rect(9, 9, 683, 180, 25); //Rectangulo con puntas redondas
-
-
-
   //coordenadas mientras mientras
   fdigital1 = createFont("Calculator.ttf", 32);
   textFont(fdigital1);
@@ -43,16 +44,17 @@ void iterativ() {
   y=String.valueOf(mouseY);
   fill(0);
   text ("x:"+x+" y: "+y, 17, 72);
-  pushStyle();
 
+  pushStyle();
   fill(0);
-  textAlign(RIGHT);
+  textAlign(LEFT);
   textFont(fdigital1);
   textSize(65);
-  text(numeroI, 657, 158);
+  text(numeroI, 46, 110);
+  textAlign(RIGHT);
+  text(res, 657, 158);
   popStyle();
 }
-
 
 void MousePressedI() {
   int n = 6; // Número de filas de botones
@@ -83,12 +85,18 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
       case 0:
         println("BORRAR TODO");
         numeroI = "";
+        resultado = resultado * 0;
+        res = String.valueOf(resultado);
         break;
       case 1:
         println("SUMA");
+        numeroI += "+";
+        operador = "+";
         break;
       case 2:
         println("RESTA");
+        numeroI += "-";
+        operador = "-";
         break;
       case 3:
         println("9");
@@ -114,9 +122,13 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 1:
         println("MULTIPLICACION");// Acciones para el botón en la posición [1][1]
+        numeroI += "*";
+        operador = "*";
         break;
       case 2:
         println("DIVISION");// Acciones para el botón en la posición [1][2]
+        numeroI += "/";
+        operador = "/";
         break;
       case 3:
         println("6");
@@ -136,12 +148,15 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
       switch (i) {
       case 0:
         println("PI");
+        numeroI += "π";
         break;
       case 1:
         println("DIV");
         break;
       case 2:
         println("MOD");
+        numeroI += "%";
+        operador = "%";
         break;
       case 3:
         println("3");
@@ -179,6 +194,11 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
       case 5:
         println("IGUAL");
         println(numeroI);
+
+        calcularResultado();
+        res = String.valueOf(resultado);
+
+        
         break;
       }
       break;
@@ -186,6 +206,7 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
     mousePressed = false;
   }
 }
+
 
 void mouseClickedI() {
   if (mouseX>=12 & mouseX<=97 & mouseY>=12 & mouseY<=45) {
@@ -199,5 +220,46 @@ void mouseClickedI() {
     println("COSENO");
   } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
     println("TANGENTE");
+  }
+}
+
+
+void calcularResultado() {
+
+ 
+  String[] numeros = numeroI.split("[+\\-*/^!]+");
+  String[] operadores = numeroI.split("\\d+");
+
+  float[] operandos = new float[numeros.length];
+
+  for (int i = 0; i < numeros.length; i++) {
+    operandos[i] = Float.parseFloat(numeros[i]);
+  }
+
+  resultado = operandos[0];
+
+  for (int i = 1; i < operandos.length; i++) {
+    String operador = operadores[i];
+
+    switch (operador) {
+    case "+":
+      resultado = resultado + operandos[i];
+      break;
+    case "-":
+      resultado = resultado - operandos[i];
+      break;
+    case "*":
+      resultado = resultado * operandos[i];
+      break;
+    case "/":
+      resultado = resultado / operandos[i];
+      break;
+    case "^":
+      //resultado = pow(resultado, operandos[i]);
+      break;
+    case "!":
+      //resultado = factorial((int)resultado);
+      break;
+    }
   }
 }
