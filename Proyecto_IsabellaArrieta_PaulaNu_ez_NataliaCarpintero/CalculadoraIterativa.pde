@@ -49,9 +49,10 @@ void iterativ() {
   fill(0);
   textAlign(LEFT);
   textFont(fdigital1);
-  textSize(65);
-  text(numeroI, 46, 110);
+  textSize(40);
+  text(numeroI, 171, 63);
   textAlign(RIGHT);
+  textSize(65);
   text(res, 657, 158);
   popStyle();
 }

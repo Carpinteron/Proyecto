@@ -1,4 +1,4 @@
-
+int num;
 void setupR(){
   recur();
   surface.setTitle("CALCULADORA RECURSIVA");
@@ -59,6 +59,9 @@ void MousePressedR() {
   }
 }
 
+////int suma(int num, int j){
+////return s;
+//}
 void botonesR(int i, int j) { // Se ejecuta al presionar los botones
   if (mousePressed) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
@@ -69,6 +72,7 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 1:
         println("SUMA");
+        
         break;
       case 2:
         println("RESTA");
