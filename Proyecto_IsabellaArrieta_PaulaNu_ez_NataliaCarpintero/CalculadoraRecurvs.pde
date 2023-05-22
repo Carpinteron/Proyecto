@@ -36,6 +36,17 @@ void recur(){
   y=String.valueOf(mouseY);
   fill(0);
   text ("x:"+x+" y: "+y, 17, 72);
+  
+   pushStyle();
+  fill(0);
+  textAlign(LEFT);
+  textFont(fdigital1);
+  textSize(40);
+  text(numeroI, 171, 63);
+  textAlign(RIGHT);
+  textSize(65);
+  text(res, 657, 158);
+  popStyle();
 }
 
 void MousePressedR() {
@@ -59,9 +70,14 @@ void MousePressedR() {
   }
 }
 
-////int suma(int num, int j){
-////return s;
-//}
+int suma(int num, int j, int i){
+  if(j==3 &i==5){
+    return num;
+  }else{
+    return num+suma(num,j,i);
+  }
+  
+}
 void botonesR(int i, int j) { // Se ejecuta al presionar los botones
   if (mousePressed) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
@@ -69,22 +85,31 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
       switch (i) { // CAMBIA DE ACUERDO CON LA COLUMNA DE BOTONES
       case 0:
         println("BORRAR TODO");
+        numeroI = "";
+        resultado = resultado * 0;
+        res = String.valueOf(resultado);
         break;
       case 1:
         println("SUMA");
-        
+        numeroI += "+";
+        operador = "+";
         break;
       case 2:
         println("RESTA");
+        numeroI += "-";
+        operador = "-";
         break;
       case 3:
         println("9");
+        numeroI += "9";
         break;
       case 4:
         println("8");
+        numeroI += "8";
         break;
       case 5:
         println("7");
+        numeroI += "7";
         break;
       }
       break;
@@ -92,21 +117,31 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
       switch (i) {
       case 0:
         println("BORRAR"); // Acciones para el botón en la posición [1][0]
+        if (!numeroI.isEmpty()) {
+          numeroI = numeroI.substring(0, numeroI.length() - 1); // Elimina el último dígito del número actual
+        }
         break;
       case 1:
         println("MULTIPLICACION");// Acciones para el botón en la posición [1][1]
+        numeroI += "*";
+        operador = "*";
         break;
       case 2:
         println("DIVISION");// Acciones para el botón en la posición [1][2]
+        numeroI += "/";
+        operador = "/";
         break;
       case 3:
         println("6");
+        numeroI += "6";
         break;
       case 4:
         println("5");
+        numeroI += "5";
         break;
       case 5:
         println("4");
+        numeroI += "4";
         break;
       }
       break;
@@ -114,21 +149,27 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
       switch (i) {
       case 0:
         println("PI");
+        numeroI += "π";
         break;
       case 1:
         println("DIV");
         break;
       case 2:
         println("MOD");
+        numeroI += "%";
+        operador = "%";
         break;
       case 3:
         println("3");
+        numeroI += "3";
         break;
       case 4:
         println("2");
+        numeroI += "2";
         break;
       case 5:
         println("1");
+        numeroI += "1";
         break;
       }
       break;
@@ -145,12 +186,20 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 3:
         println("COMA");
+        numeroI += ".";
         break;
       case 4:
         println("0");
+        numeroI += "0";
         break;
       case 5:
         println("IGUAL");
+        println(numeroI);
+
+        calcularResultado();
+        res = String.valueOf(resultado);
+
+        
         break;
       }
       break;
