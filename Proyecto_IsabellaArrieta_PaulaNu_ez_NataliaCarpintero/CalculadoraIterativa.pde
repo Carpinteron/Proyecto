@@ -6,12 +6,12 @@ float resultado = 0;  // Almacena el resultado de la operación actual
 float num1 = 0;  // Almacena el número anterior ingresado por el usuario
 String operador = "";  // Almacena el operador actual (+, -, *, /)
 float ans = 0;
-
+int i, j;
 
 void setupI() {
 
   iterativ();
- 
+
   surface.setTitle("CALCULADORA ITERATIVA");
   //Boton volver
   fill(245, 234, 138); //Cambio color amarillo
@@ -29,7 +29,9 @@ void setupI() {
   textFont(letra);
 
   text("Iterativa", 56, 250);
-  
+
+
+  //miseria=new Serial(this, "COM5", 9600);
 }
 
 void iterativ() {
@@ -63,7 +65,7 @@ void iterativ() {
   text(res, 657, 158);
   popStyle();
 
-//PUNTERO 
+  //PUNTERO
   if (dib) {
     if (opa>0) {
       fill(255, 208, 131, opa);
@@ -79,8 +81,18 @@ void iterativ() {
       }
     }
   }
-  
- 
+
+  //if (miseria.available()>0) {
+  //  String datos= miseria.readStringUntil('\n');
+  //  if (datos!=null) {
+  //    datos = datos.trim(); // Eliminar espacios en blanco al inicio y final de la cadena
+  //    String[] valores = datos.split(","); // Dividir la cadena en función del separador ","
+  //    if (valores.length == 2) {
+  //      j = int(valores[0]); // Convertir el primer valor a entero
+  //      i = int(valores[1]); // Convertir el segundo valor a entero
+  //    }
+  //  }
+  //}
 }
 
 
@@ -103,10 +115,10 @@ void MousePressedI() {
     }
   }
 }
-int i, j;
-void botonesI( i, j) { // Se ejecuta al presionar los botones
 
-  if (mousePressed | ardu==) {
+void botonesI( int i, int j) { // Se ejecuta al presionar los botones
+
+  if (mousePressed ) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
     case 0: // FILA 0 DE BOTONES
       switch (i) { // CAMBIA DE ACUERDO CON LA COLUMNA DE BOTONES
