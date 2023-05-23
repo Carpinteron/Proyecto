@@ -2,7 +2,7 @@ import meter.*;
 
 import processing.serial.*;
 
-Serial miserial;
+Serial miseria;
 
 String x, y;//coordenaadas
 PFont ftitulo, fsubtitulo, fn;

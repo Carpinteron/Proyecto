@@ -3,7 +3,7 @@ void setupR(){
   recur();
   surface.setTitle("CALCULADORA RECURSIVA");
   
- 
+  miseria=new Serial(this,Serial.list()[0],9600); //conectar arduino
   //Boton volver
   fill(245, 234, 138); //Cambio color amarillo
   stroke(21, 21, 62); //Borde color

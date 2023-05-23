@@ -6,10 +6,12 @@ float resultado = 0;  // Almacena el resultado de la operación actual
 float num1 = 0;  // Almacena el número anterior ingresado por el usuario
 String operador = "";  // Almacena el operador actual (+, -, *, /)
 float ans = 0;
-Meter v;
+
+
 void setupI() {
 
   iterativ();
+  miseria=new Serial(this,Serial.list()[0],9600); //conectar arduino
   surface.setTitle("CALCULADORA ITERATIVA");
   //Boton volver
   fill(245, 234, 138); //Cambio color amarillo
@@ -76,6 +78,8 @@ void iterativ() {
       }
     }
   }
+  
+ 
 }
 
 
