@@ -37,6 +37,7 @@ void recur(){
   fill(0);
   text ("x:"+x+" y: "+y, 17, 72);
   
+  //Imprimir numeros
    pushStyle();
   fill(0);
   textAlign(LEFT);
@@ -70,14 +71,7 @@ void MousePressedR() {
   }
 }
 
-int suma(int num, int j, int i){
-  if(j==3 &i==5){
-    return num;
-  }else{
-    return num+suma(num,j,i);
-  }
-  
-}
+
 void botonesR(int i, int j) { // Se ejecuta al presionar los botones
   if (mousePressed) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
@@ -183,6 +177,7 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 2:
         println("FACTORIAL");
+        numeroI=fac(numeroI);
         break;
       case 3:
         println("COMA");
@@ -208,6 +203,7 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
   }
 }
 
+
 void mouseClickedR() {
   if (mouseX>=12 & mouseX<=97 & mouseY>=12 & mouseY<=45) {
     pag = 0; // volver a menu principal
@@ -220,5 +216,62 @@ void mouseClickedR() {
     println("COSENO");
   } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
     println("TANGENTE");
+  }
+}
+
+void calcularResultadoRe() {
+
+ 
+  String[] numeros = numeroI.split("[+\\-*/^!]+");
+  String[] operadores = numeroI.split("\\d+");
+
+  float[] operandos = new float[numeros.length];
+
+  for (int i = 0; i < numeros.length; i++) {
+    operandos[i] = Float.parseFloat(numeros[i]);
+  }
+
+  resultado = operandos[0];
+
+  for (int i = 1; i < operandos.length; i++) {
+    String operador = operadores[i];
+
+    switch (operador) {
+    case "+":
+      resultado = resultado + operandos[i];
+      break;
+    case "-":
+      resultado = resultado - operandos[i];
+      break;
+    case "*":
+      resultado = resultado * operandos[i];
+      break;
+    case "/":
+      resultado = resultado / operandos[i];
+      break;
+    case "^":
+      //resultado = pow(resultado, operandos[i]);
+      break;
+    case "!":
+      resultado = fac(resultado);
+      break;
+    }
+  }
+}
+
+int suma(int num, int j, int i){
+  if(j==3 &i==5){
+    return num;
+  }else{
+    return num+suma(num,j,i);
+  }
+  
+}
+int fac(int n){
+  if(n==1){
+    return 1;
+    
+  }else{
+    return n*fac(n-1);
   }
 }
