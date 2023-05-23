@@ -11,7 +11,7 @@ float ans = 0;
 void setupI() {
 
   iterativ();
-  miseria=new Serial(this,Serial.list()[0],9600); //conectar arduino
+ 
   surface.setTitle("CALCULADORA ITERATIVA");
   //Boton volver
   fill(245, 234, 138); //Cambio color amarillo
@@ -29,6 +29,7 @@ void setupI() {
   textFont(letra);
 
   text("Iterativa", 56, 250);
+  
 }
 
 void iterativ() {
@@ -102,10 +103,10 @@ void MousePressedI() {
     }
   }
 }
+int i, j;
+void botonesI( i, j) { // Se ejecuta al presionar los botones
 
-void botonesI(int i, int j) { // Se ejecuta al presionar los botones
-
-  if (mousePressed) {
+  if (mousePressed | ardu==) {
     switch (j) { // CAMBIA DE ACUERDO CON LA FILA DE BOTONES
     case 0: // FILA 0 DE BOTONES
       switch (i) { // CAMBIA DE ACUERDO CON LA COLUMNA DE BOTONES
