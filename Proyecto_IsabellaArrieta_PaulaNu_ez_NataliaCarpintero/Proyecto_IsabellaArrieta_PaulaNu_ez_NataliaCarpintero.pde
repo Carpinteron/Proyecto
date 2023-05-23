@@ -9,6 +9,9 @@ PFont ftitulo, fsubtitulo, fn;
 int pag = 0;
 PImage Bs;
 PImage calc;
+float opa=255;
+boolean dib=false;
+float time=0, seg=40000;
 
 //Variable para el tipo de letra
 void setup()
@@ -70,6 +73,8 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   text("Calculadora \n  Recursiva", 424, 296);
   //Menu principal
 
+
+  
   if (pag==0) {
     setup();
   } else if (pag==1) { //Calculadora Iterativa
@@ -79,6 +84,8 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
     setupR();
     MousePressedR();
   }
+  
+   
 }
 
 //Cambiar "pagina" al presionar un boton
@@ -95,4 +102,12 @@ void mouseClicked() {
   } else if (pag ==2){
    mouseClickedR();
   }
+  
+   if(!dib){
+    dib=true;
+    opa=255;
+    time =0;
+  }
+
+  
 }

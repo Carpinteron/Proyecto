@@ -46,20 +46,37 @@ void iterativ() {
   fill(0);
   text ("x:"+x+" y: "+y, 17, 72);
 
-  
+
   pushStyle();
   fill(0);
   textAlign(LEFT);
   textFont(fdigital1);
   textSize(40);
- // text(numeroI, 171, 63);
- 
+  // text(numeroI, 171, 63);
+
   text(numeroI, 171, 63);
   textAlign(RIGHT);
   textSize(65);
   text(res, 657, 158);
   popStyle();
+
+  if (dib) {
+    if (opa>0) {
+      fill(255, 0, 0, opa);
+      noStroke();
+      ellipse(mouseX, mouseY, 30, 30);
+      time+=1500;
+      opa=map(time, 0, seg, 255, 0);
+
+      if (time>=seg) {
+        dib=false;
+        time=0;
+        opa=255;
+      }
+    }
+  }
 }
+
 
 void MousePressedI() {
   int n = 6; // Número de filas de botones
@@ -203,7 +220,7 @@ void botonesI(int i, int j) { // Se ejecuta al presionar los botones
         calcularResultado();
         res = String.valueOf(resultado);
 
-        
+
         break;
       }
       break;
@@ -226,12 +243,20 @@ void mouseClickedI() {
   } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
     println("TANGENTE");
   }
+
+
+
+  if (!dib) {
+    dib=true;
+    opa=255;
+    time =0;
+  }
 }
 
 
 void calcularResultado() {
 
- 
+
   String[] numeros = numeroI.split("[+\\-*/^!]+");
   String[] operadores = numeroI.split("\\d+");
 

@@ -48,6 +48,22 @@ void recur(){
   textSize(65);
   text(res, 657, 158);
   popStyle();
+  
+   if (dib) {
+    if (opa>0) {
+      fill(255, 0, 0, opa);
+      noStroke();
+      ellipse(mouseX, mouseY, 30, 30);
+      time+=1500;
+      opa=map(time, 0, seg, 255, 0);
+     
+      if (time>=seg) {
+        dib=false;
+        time=0;
+        opa=255;
+      }
+    }
+  }
 }
 
 void MousePressedR() {
@@ -177,7 +193,7 @@ void botonesR(int i, int j) { // Se ejecuta al presionar los botones
         break;
       case 2:
         println("FACTORIAL");
-        numeroI=fac(numeroI);
+        //numeroI=fac(numeroI);
         break;
       case 3:
         println("COMA");
@@ -217,6 +233,12 @@ void mouseClickedR() {
   } else if (mouseX>=559 && mouseX<=655 && mouseY>=210 && mouseY<=260) {
     println("TANGENTE");
   }
+  
+    if(!dib){
+    dib=true;
+    opa=255;
+    time =0;
+  }
 }
 
 void calcularResultadoRe() {
@@ -253,7 +275,7 @@ void calcularResultadoRe() {
       //resultado = pow(resultado, operandos[i]);
       break;
     case "!":
-      resultado = fac(resultado);
+      //resultado = fac(resultado);
       break;
     }
   }
