@@ -1,5 +1,8 @@
+import meter.*;
+
 import processing.serial.*;
 
+Serial miserial;
 
 String x, y;//coordenaadas
 PFont ftitulo, fsubtitulo, fn;
@@ -18,6 +21,8 @@ void setup()
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
   fn=loadFont("MS-Gothic-20.vlw");
   pag=0;
+  
+  
 }
 void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 {

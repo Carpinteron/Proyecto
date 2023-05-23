@@ -6,6 +6,7 @@ float resultado = 0;  // Almacena el resultado de la operación actual
 float num1 = 0;  // Almacena el número anterior ingresado por el usuario
 String operador = "";  // Almacena el operador actual (+, -, *, /)
 float ans = 0;
+Meter v;
 void setupI() {
 
   iterativ();
@@ -45,11 +46,14 @@ void iterativ() {
   fill(0);
   text ("x:"+x+" y: "+y, 17, 72);
 
+  
   pushStyle();
   fill(0);
   textAlign(LEFT);
   textFont(fdigital1);
   textSize(40);
+ // text(numeroI, 171, 63);
+ 
   text(numeroI, 171, 63);
   textAlign(RIGHT);
   textSize(65);
