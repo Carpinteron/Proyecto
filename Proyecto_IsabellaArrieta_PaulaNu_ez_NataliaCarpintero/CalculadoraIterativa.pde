@@ -60,11 +60,12 @@ void iterativ() {
   text(res, 657, 158);
   popStyle();
 
+//PUNTERO 
   if (dib) {
     if (opa>0) {
-      fill(255, 0, 0, opa);
+      fill(255, 208, 131, opa);
       noStroke();
-      ellipse(mouseX, mouseY, 30, 30);
+      ellipse(mouseX, mouseY, 60, 60);
       time+=1500;
       opa=map(time, 0, seg, 255, 0);
 

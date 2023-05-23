@@ -51,9 +51,9 @@ void recur(){
   
    if (dib) {
     if (opa>0) {
-      fill(255, 0, 0, opa);
+      fill(255, 131, 235, opa);
       noStroke();
-      ellipse(mouseX, mouseY, 30, 30);
+      ellipse(mouseX, mouseY, 60, 60);
       time+=1500;
       opa=map(time, 0, seg, 255, 0);
      
