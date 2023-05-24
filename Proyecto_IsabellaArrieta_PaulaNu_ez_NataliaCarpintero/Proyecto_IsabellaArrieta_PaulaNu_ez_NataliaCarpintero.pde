@@ -2,7 +2,8 @@ import meter.*;
 
 import processing.serial.*;
 
-Serial miseria;
+Serial Ardu;
+Meter miseria;
 
 String x, y;//coordenaadas
 PFont ftitulo, fsubtitulo, fn;
@@ -24,8 +25,7 @@ void setup()
   fsubtitulo=loadFont("Constantia-BoldItalic-20.vlw");
   fn=loadFont("MS-Gothic-20.vlw");
   pag=0;
-  
-  
+
 }
 void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
 {
@@ -74,7 +74,34 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
   //Menu principal
 
 
-  
+
+  //PUNTERO
+  if (dib) {
+    if (opa>0) {
+      fill(255, 208, 131, opa); //Circulo 1
+      noStroke();
+      ellipse(mouseX, mouseY, 50, 50);
+      fill(214, 102, 11, opa); //Circulo 2 el que sera mas pequeño y crecera
+      noStroke();
+      ellipse(mouseX, mouseY, 10+tam, 10+tam);
+
+      time+=1500; //tiempo en aumento
+      opa=map(time, 0, seg, 255, 0); //transparencia
+      tam=map(time, 0, seg, 0, 40);//tamaño
+
+      if (time>=seg) { //si el tiempo en aumento llega al limite de segundos del efecto que pare y se reinicie
+        dib=false;
+        time=0;
+        opa=255;
+        tam=0;
+      }
+    }
+    
+   
+    
+  }
+
+
   if (pag==0) {
     setup();
   } else if (pag==1) { //Calculadora Iterativa
@@ -84,8 +111,6 @@ void draw() //intrucciones que se ejecutan repetidamente Como un ciclo
     setupR();
     MousePressedR();
   }
-  
-   
 }
 
 //Cambiar "pagina" al presionar un boton
@@ -97,17 +122,16 @@ void mouseClicked() {
     } else if (mouseX>=456 & mouseX<=656 & mouseY>=260 & mouseY<=350) {
       pag=2;
     }
-  }else if (pag == 1){
-   mouseClickedI();
-  } else if (pag ==2){
-   mouseClickedR();
+  } else if (pag == 1) {
+    mouseClickedI();
+  } else if (pag ==2) {
+    mouseClickedR();
   }
-  
-   if(!dib){
+
+  if (!dib) {
     dib=true;
     opa=255;
     time =0;
+    tam=0;
   }
-
-  
 }
