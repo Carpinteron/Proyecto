@@ -3,7 +3,7 @@ void setupR(){
   recur();
   surface.setTitle("CALCULADORA RECURSIVA");
   
-  miseria=new Serial(this,Serial.list()[0],9600); //conectar arduino
+  //miseria=new Serial(this,Serial.list()[0],9600); //conectar arduino
   //Boton volver
   fill(245, 234, 138); //Cambio color amarillo
   stroke(21, 21, 62); //Borde color
@@ -53,14 +53,19 @@ void recur(){
     if (opa>0) {
       fill(255, 131, 235, opa);
       noStroke();
-      ellipse(mouseX, mouseY, 60, 60);
+      ellipse(mouseX, mouseY, 50, 50);
+       fill(144, 23, 126, opa);
+      noStroke();
+      ellipse(mouseX, mouseY, 10+tam, 10+tam);
       time+=1500;
       opa=map(time, 0, seg, 255, 0);
+      tam=map(time, 0, seg, 0, 40);
      
       if (time>=seg) {
         dib=false;
         time=0;
         opa=255;
+        tam=0;
       }
     }
   }
@@ -238,6 +243,7 @@ void mouseClickedR() {
     dib=true;
     opa=255;
     time =0;
+    tam=0;
   }
 }
 

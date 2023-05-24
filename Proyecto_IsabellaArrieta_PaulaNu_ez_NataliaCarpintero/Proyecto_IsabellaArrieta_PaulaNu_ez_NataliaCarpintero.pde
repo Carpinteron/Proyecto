@@ -9,7 +9,7 @@ PFont ftitulo, fsubtitulo, fn;
 int pag = 0;
 PImage Bs;
 PImage calc;
-float opa=255;
+float opa=255, tam=0;
 boolean dib=false;
 float time=0, seg=40000;
 

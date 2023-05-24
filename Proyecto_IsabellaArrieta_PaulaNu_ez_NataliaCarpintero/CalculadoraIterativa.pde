@@ -68,16 +68,22 @@ void iterativ() {
   //PUNTERO
   if (dib) {
     if (opa>0) {
-      fill(255, 208, 131, opa);
+      fill(255, 208, 131, opa); //Circulo 1
       noStroke();
-      ellipse(mouseX, mouseY, 60, 60);
-      time+=1500;
-      opa=map(time, 0, seg, 255, 0);
+      ellipse(mouseX, mouseY, 50, 50);
+       fill(214, 102, 11, opa); //Circulo 2 el que sera mas pequeño y crecera
+      noStroke();
+      ellipse(mouseX, mouseY, 10+tam, 10+tam);
+      
+      time+=1500; //tiempo en aumento
+      opa=map(time, 0, seg, 255, 0); //transparencia
+       tam=map(time, 0, seg, 0, 40);//tamaño
 
-      if (time>=seg) {
-        dib=false;
+      if (time>=seg) { //si el tiempo en aumento llega al limite de segundos del efecto que pare y se reinicie
+        dib=false; 
         time=0;
         opa=255;
+        tam=0;
       }
     }
   }
@@ -268,6 +274,7 @@ void mouseClickedI() {
     dib=true;
     opa=255;
     time =0;
+    tam=0;
   }
 }
 
